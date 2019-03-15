@@ -1,0 +1,18 @@
+---
+- name: Set concurrent option
+  lineinfile:
+    dest: /etc/gitlab-runner/config.toml
+    regexp: '^(\s*)concurrent ='
+    line: '\1concurrent = {{ gitlab_runner_concurrent }}'
+    state: present
+    backrefs: yes
+  notify: restart_gitlab_runner
+- name: Create directory
+  file:
+    path: /etc/gitlab-runner/certs
+    state: directory
+    
+- name: put gitlab cert to runner
+  shell: openssl s_client -connect gitlab:443 -showcerts < /dev/null | openssl x509 -outform PEM > /etc/gitlab-runner/certs/gitlab.crt
+  args:
+    executable: /bin/bash

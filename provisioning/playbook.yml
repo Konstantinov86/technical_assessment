@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - ntp
+
+- hosts: gitlab
+  become: yes
+  roles:
+    - gitlab
+
+
+- hosts: runner
+  become: yes
+  roles:
+    - runner
+
+- hosts: gitlab
+  become: yes
+  roles:
+    - git
+
