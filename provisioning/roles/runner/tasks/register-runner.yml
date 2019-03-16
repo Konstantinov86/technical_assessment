@@ -53,6 +53,6 @@
   no_log: true
 
 - name: Create Default Project
-  command: chdir=/vagrant/provisioning/project git -c http.sslVerify=false push --set-upstream https://root:'5iveL!fe'@gitlab/root/project.git master
+  command: chdir=/vagrant git -c http.sslVerify=false push --set-upstream https://root:'5iveL!fe'@gitlab/root/project.git master
 
 
