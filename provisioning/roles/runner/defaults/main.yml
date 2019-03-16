@@ -8,7 +8,7 @@ gitlab_runner_concurrent: '{{ ansible_processor_vcpus }}'
 # GitLab coordinator URL
 gitlab_runner_coordinator_url: 'https://gitlab'
 # GitLab registration token
-gitlab_runner_registration_token: ''
+gitlab_runner_registration_token: 'h85Pb14LsZGnKayAsfqs'
 #Gitlab certificate_complete_chain
 tls_ca_file: '/etc/gitlab-runner/certs/gitlab.crt'
 
